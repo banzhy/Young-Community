@@ -1,0 +1,6 @@
+rootProject.name='FineJetpack'
+include ':app'
+include ':libnavannotation'
+include ':libnavcompiler'
+include ':libnetwork'
+include ':libcommon'

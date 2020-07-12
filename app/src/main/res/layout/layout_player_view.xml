@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--未填充满的背景图-->
+    <com.example.finejetpack.view.DBImageView
+        android:id="@+id/blur_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_theme_10" />
+
+    <!--真正播放视频的View， 会动态添加到这里-->
+
+    <!--视频封面-->
+    <com.example.finejetpack.view.DBImageView
+        android:id="@+id/cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!--控制播放暂停等-->
+    <ImageView
+        android:id="@+id/play_btn"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:layout_gravity="center"
+        android:src="@drawable/icon_video_play" />
+
+    <!--视频播放进度条，会随视频播放View动态添加，而不是写死-->
+
+
+    <!--视频播放缓冲-->
+    <ProgressBar
+        android:id="@+id/buffer_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/color_theme_10"
+        android:visibility="gone" />
+
+</merge>

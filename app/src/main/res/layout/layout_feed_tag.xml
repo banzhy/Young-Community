@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.text.TextUtils"/>
+        <import type="android.view.View"/>
+
+        <variable
+            name="tagText"
+            type="String" />
+    </data>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/color_gray"
+        android:orientation="vertical"
+        android:visibility="@{TextUtils.isEmpty(tagText) ? View.GONE : View.VISIBLE}"
+        android:text="@{tagText}"
+        tools:text="神秘的皮皮虾"
+        android:textColor="@color/color_2f2"
+        android:textSize="@dimen/sp_12"
+        app:cornerRadius="@dimen/dp_25"
+        app:icon="@drawable/icon_tag"
+        app:iconGravity="textStart"
+        app:iconPadding="@dimen/dp_4"/>
+</layout>

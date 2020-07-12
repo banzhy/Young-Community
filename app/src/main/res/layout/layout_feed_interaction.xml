@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.example.finejetpack.model.Feed"/>
+        <import type="com.example.finejetpack.utils.StringConvert"/>
+
+        <variable
+            name="feed"
+            type="Feed" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:paddingLeft="@dimen/dp_16"
+        android:paddingRight="@dimen/dp_16"
+        android:orientation="horizontal">
+
+        <!--app:backgroundTint="@color/color_white"-->
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/sp_14"
+            app:iconPadding="4dp"
+            app:iconGravity="textStart"
+            tools:text="1000"
+            tools:icon="@drawable/icon_cell_liked"
+            android:textColor="@{feed.ugc.hasLiked ? @color/color_theme : @color/color_3d3}"
+            android:text="@{feed.ugc.likeCount > 0 ? StringConvert.convertFeedUgc(feed.ugc.likeCount) : null}"
+            app:icon="@{feed.ugc.hasLiked ? @drawable/icon_cell_liked : @drawable/icon_cell_like}" />
+
+        <!--app:backgroundTint="@color/color_white"-->
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/sp_14"
+            app:iconPadding="4dp"
+            app:iconGravity="textStart"
+            tools:text="1000"
+            tools:icon="@drawable/icon_cell_diss"
+            android:textColor="@{feed.ugc.hasdiss ? @color/color_theme : @color/color_3d3}"
+            android:text="踩"
+            app:icon="@{feed.ugc.hasdiss ? @drawable/icon_cell_dissed : @drawable/icon_cell_diss}" />
+
+        <!--app:backgroundTint="@color/color_white"-->
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/sp_14"
+            app:iconPadding="4dp"
+            app:iconGravity="textStart"
+            tools:text="1000"
+            tools:icon="@drawable/icon_cell_comment"
+            android:text="@{feed.ugc.likeCount > 0 ? StringConvert.convertFeedUgc(feed.ugc.commentCount) : null}"
+            app:icon="@drawable/icon_cell_comment" />
+
+        <!--app:backgroundTint="@color/color_white"-->
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/sp_14"
+            app:iconPadding="4dp"
+            app:iconGravity="textStart"
+            tools:text="1000"
+            tools:icon="@drawable/icon_cell_share"
+            android:textColor="@{feed.ugc.hasLiked ? @color/color_theme : @color/color_3d3}"
+            android:text="@{feed.ugc.shareCount > 0 ? StringConvert.convertFeedUgc(feed.ugc.shareCount) : null}"
+            app:icon="@drawable/icon_cell_share" />
+    </LinearLayout>
+</layout>

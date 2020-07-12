@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.text.TextUtils"/>
+        <import type="android.view.View"/>
+
+        <variable
+            name="feedText"
+            type="String" />
+    </data>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="4"
+        android:ellipsize="end"
+        android:layout_marginVertical="@dimen/dp_16"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@color/color_2f2"
+        android:orientation="vertical"
+        android:text="@{feedText}"
+        tools:text="神秘的皮皮虾"
+        android:visibility="@{TextUtils.isEmpty(feedText) ? View.GONE :View.VISIBLE}">
+    </TextView>
+</layout>
